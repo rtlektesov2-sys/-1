@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Домашняя кухня</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Домашняя кухня</h1>
+    <p class="subtitle">Рецепты на каждый день</p>
+  </header>
+
+  <main class="container">
+
+    <form id="recipe-form" class="recipe-form">
+      <h2>Добавить рецепт</h2>
+      <div class="form-grid">
+        <label>Название <input name="title" required placeholder="Например, сырники"></label>
+        <label>Категория <input name="category" required placeholder="Десерты"></label>
+        <label>Кухня <input name="cuisine" required placeholder="Русская"></label>
+        <label>Время, минут <input name="time" type="number" min="1" required placeholder="30"></label>
+        <label>Сложность
+          <select name="difficulty" required>
+            <option value="Легко">Легко</option>
+            <option value="Средне">Средне</option>
+            <option value="Сложно">Сложно</option>
+          </select>
+        </label>
+        <label class="checkbox-label"><input name="vegetarian" type="checkbox"> Вегетарианское</label>
+      </div>
+      <button class="btn" type="submit">Сохранить рецепт</button>
+      <p id="form-message" class="form-message" hidden></p>
+    </form>
+
+    <p id="loader" class="message">Загрузка данных…</p>
+
+    <div id="error" class="message message--error" hidden>
+      <p>Не удалось загрузить данные. Проверьте, запущен ли сервер.</p>
+      <button id="retry" class="btn">Повторить</button>
+    </div>
+
+    <p id="empty" class="message" hidden>Рецептов пока нет.</p>
+
+    <div id="cards" class="cards" hidden></div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Паста карбонара",
+    "category": "Основные блюда",
+    "cuisine": "Итальянская",
+    "time": 25,
+    "difficulty": "Легко",
+    "vegetarian": false
+  },
+  {
+    "id": 2,
+    "title": "Том ям с креветками",
+    "category": "Супы",
+    "cuisine": "Тайская",
+    "time": 40,
+    "difficulty": "Средне",
+    "vegetarian": false
+  },
+  {
+    "id": 3,
+    "title": "Греческий салат",
+    "category": "Салаты",
+    "cuisine": "Греческая",
+    "time": 15,
+    "difficulty": "Легко",
+    "vegetarian": true
+  },
+  {
+    "id": 4,
+    "title": "Чечил с овощами",
+    "category": "Основные блюда",
+    "cuisine": "Кавказская",
+    "time": 35,
+    "difficulty": "Средне",
+    "vegetarian": true
+  },
+  {
+    "id": 5,
+    "title": "Шоколадный брауни",
+    "category": "Десерты",
+    "cuisine": "Американская",
+    "time": 50,
+    "difficulty": "Легко",
+    "vegetarian": true
+  },
+  {
+    "id": 6,
+    "title": "Рамен с курицей",
+    "category": "Супы",
+    "cuisine": "Японская",
+    "time": 60,
+    "difficulty": "Сложно",
+    "vegetarian": false
+  },
+  {
+    "id": 7,
+    "title": "Хумус с питой",
+    "category": "Закуски",
+    "cuisine": "Ближневосточная",
+    "time": 30,
+    "difficulty": "Легко",
+    "vegetarian": true
+  }
+]
