@@ -1,0 +1,31 @@
+<%- include('partials/head', { title: course.title, description: course.description }) %>
+<%- include('partials/header', { activePage: 'course' }) %>
+<main class="course-detail section-wrap">
+  <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Каталог</a><span aria-hidden="true">/</span><span><%= course.category %></span></nav>
+  <article class="course-detail__layout">
+    <div class="course-detail__content">
+      <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span> <%= course.category.toUpperCase() %></p>
+      <h1><%= course.title %></h1>
+      <p class="course-detail__description"><%= course.description %></p>
+      <p class="course-detail__instructor">Преподаватель: <strong><%= course.instructor %></strong></p>
+      <dl class="course-detail__facts">
+        <div><dt>Уровень</dt><dd><%= course.level %></dd></div>
+        <div><dt>Длительность</dt><dd><%= course.durationHours %> ч</dd></div>
+        <div><dt>Стоимость</dt><dd><%= course.price === 0 ? 'Бесплатно' : new Intl.NumberFormat('ru-KZ', { style: 'currency', currency: 'KZT', maximumFractionDigits: 0 }).format(course.price) %></dd></div>
+      </dl>
+      <section class="enroll-panel" aria-labelledby="enroll-title">
+        <h2 id="enroll-title">Записаться на курс</h2>
+        <% if (enrollmentMessage) { %><p class="enroll-success" role="status"><%= enrollmentMessage %></p><% } %>
+        <% if (enrollmentError) { %><p class="form-message form-message--error" role="alert"><%= enrollmentError %></p><% } %>
+        <form class="enroll-form" action="/film/<%= course.id %>/enroll" method="post">
+          <label>Ваше имя<input name="name" required maxlength="80" autocomplete="name" placeholder="Как к вам обращаться"></label>
+          <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="name@example.com"></label>
+          <button class="button button--green" type="submit">Записаться <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+    </div>
+    <img class="course-detail__image" src="<%= course.image || '/img/web-development.jpg' %>" alt="Иллюстрация курса «<%= course.title %>»" fetchpriority="high">
+  </article>
+  <a class="text-link" href="/">← Вернуться к каталогу</a>
+</main>
+<%- include('partials/footer', { year: year }) %>

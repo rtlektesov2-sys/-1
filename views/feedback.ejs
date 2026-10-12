@@ -1,0 +1,35 @@
+<%- include('partials/head', { title: title, description: 'Свяжитесь с командой академии FORMA.' }) %>
+<%- include('partials/header', { activePage: 'feedback' }) %>
+<main class="feedback-page section-wrap">
+  <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span> ОБРАТНАЯ СВЯЗЬ</p>
+  <div>
+    <h1><%= heading %></h1>
+    <p class="feedback-page__intro">Есть вопрос о курсах или идея для платформы? Напишите нам, и команда FORMA свяжется с вами.</p>
+  </div>
+  <form class="feedback-form" action="/feedback" method="POST">
+    <% if (errors.length > 0) { %>
+      <ul class="feedback-errors" role="alert" aria-label="Ошибки заполнения">
+        <% errors.forEach(function (error) { %>
+          <li><%= error %></li>
+        <% }); %>
+      </ul>np
+    <% } %>
+    <% if (success) { %>
+      <p class="feedback-success" role="status">Спасибо! Ваше сообщение отправлено команде FORMA.</p>
+    <% } %>
+    <label for="feedback-name">Имя
+      <input id="feedback-name" name="name" type="text" value="<%= formData.name || '' %>" required minlength="9" maxlength="100" autocomplete="name" placeholder="Имя и фамилия">
+    </label>
+    <label for="feedback-email">Email
+      <input id="feedback-email" name="email" type="email" value="<%= formData.email || '' %>" required maxlength="120" autocomplete="email" placeholder="name@example.com">
+    </label>
+    <label for="feedback-subject">Тема
+      <input id="feedback-subject" name="subject" type="text" value="<%= formData.subject || '' %>" required minlength="3" maxlength="120" placeholder="Например, вопрос о курсе">
+    </label>
+    <label for="feedback-message">Сообщение
+      <textarea id="feedback-message" name="message" required minlength="10" maxlength="2000" rows="6" placeholder="Напишите ваше сообщение"><%= formData.message || '' %></textarea>
+    </label>
+    <button class="button button--green" type="submit">Отправить сообщение <span aria-hidden="true">↗</span></button>
+  </form>
+</main>
+<%- include('partials/footer', { year: year }) %>

@@ -1,0 +1,12 @@
+<header class="site-header">
+  <a class="brand" href="/" aria-label="FORMA, на главную">
+    <span class="brand__mark" aria-hidden="true">F</span>
+    <span class="brand__name">FORMA<span>АКАДЕМИЯ</span></span>
+  </a>
+  <nav class="main-nav" aria-label="Основная навигация">
+    <a class="<%= activePage === 'catalog' || activePage === 'course' ? 'is-current' : '' %>" href="/">Каталог</a>
+    <a class="<%= activePage === 'about' ? 'is-current' : '' %>" href="/about">О платформе</a>
+    <a href="/#for-teachers">Преподавателям</a>
+  </nav>
+  <a class="button button--nav" href="/">Найти курс <span aria-hidden="true">↗</span></a>
+</header>

@@ -1,0 +1,9 @@
+<%- include('partials/head', { title: 'Страница не найдена' }) %>
+<%- include('partials/header', { activePage: 'not-found' }) %>
+<main class="not-found__main">
+  <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span> ОШИБКА 404</p>
+  <h1><%= heading || 'Такой страницы нет.' %></h1>
+  <p><%= message || 'Но подходящий курс ещё найдётся.' %></p>
+  <a class="button button--green" href="/">Вернуться в каталог <span aria-hidden="true">↗</span></a>
+</main>
+<%- include('partials/footer', { year: year }) %>

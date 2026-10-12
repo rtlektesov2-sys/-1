@@ -1,65 +1,101 @@
 [
   {
     "id": 1,
-    "title": "Паста карбонара",
-    "category": "Основные блюда",
-    "cuisine": "Итальянская",
-    "time": 25,
-    "difficulty": "Легко",
-    "vegetarian": false
+    "title": "Искусственный интеллект: первые шаги",
+    "category": "Искусственный интеллект",
+    "instructor": "Мария Соколова",
+    "level": "Начальный",
+    "durationHours": 12,
+    "price": 0,
+    "description": "Разберитесь, как устроен ИИ, попробуйте популярные инструменты и создайте свой первый проект.",
+    "image": "/img/ai-intro.jpg"
   },
   {
     "id": 2,
-    "title": "Том ям с креветками",
-    "category": "Супы",
-    "cuisine": "Тайская",
-    "time": 40,
-    "difficulty": "Средне",
-    "vegetarian": false
+    "title": "Python для анализа данных",
+    "category": "Программирование",
+    "instructor": "Дмитрий Волков",
+    "level": "Начальный",
+    "durationHours": 18,
+    "price": 2490,
+    "description": "Освойте основы Python, научитесь работать с таблицами и находить закономерности в данных.",
+    "image": "/img/python-data.jpg"
   },
   {
     "id": 3,
-    "title": "Греческий салат",
-    "category": "Салаты",
-    "cuisine": "Греческая",
-    "time": 15,
-    "difficulty": "Легко",
-    "vegetarian": true
+    "title": "Веб-разработка на JavaScript",
+    "category": "Программирование",
+    "instructor": "Алексей Морозов",
+    "level": "Средний",
+    "durationHours": 24,
+    "price": 3990,
+    "description": "Создайте интерактивный сайт и изучите современный JavaScript на практических задачах.",
+    "image": "/img/web-development.jpg"
   },
   {
     "id": 4,
-    "title": "Чечил с овощами",
-    "category": "Основные блюда",
-    "cuisine": "Кавказская",
-    "time": 35,
-    "difficulty": "Средне",
-    "vegetarian": true
+    "title": "Машинное обучение без сложных формул",
+    "category": "Искусственный интеллект",
+    "instructor": "Елена Ким",
+    "level": "Средний",
+    "durationHours": 20,
+    "price": 3490,
+    "description": "Поймите основные модели машинного обучения и соберите несколько проектов на Python.",
+    "image": "/img/machine-learning.jpg"
   },
   {
     "id": 5,
-    "title": "Шоколадный брауни",
-    "category": "Десерты",
-    "cuisine": "Американская",
-    "time": 50,
-    "difficulty": "Легко",
-    "vegetarian": true
+    "title": "HTML и CSS: создаём первый сайт",
+    "category": "Программирование",
+    "instructor": "Никита Павлов",
+    "level": "Начальный",
+    "durationHours": 10,
+    "price": 0,
+    "description": "Научитесь собирать страницы, работать с типографикой и адаптировать сайт для телефона.",
+    "image": "/img/html-css.jpg"
   },
   {
     "id": 6,
-    "title": "Рамен с курицей",
-    "category": "Супы",
-    "cuisine": "Японская",
-    "time": 60,
-    "difficulty": "Сложно",
-    "vegetarian": false
+    "title": "Аналитика данных и SQL",
+    "category": "Анализ данных",
+    "instructor": "Ольга Назарова",
+    "level": "Начальный",
+    "durationHours": 16,
+    "price": 1990,
+    "description": "Научитесь задавать вопросы данным, писать SQL-запросы и представлять результаты.",
+    "image": "/img/data-analysis.jpg"
   },
   {
     "id": 7,
-    "title": "Хумус с питой",
-    "category": "Закуски",
-    "cuisine": "Ближневосточная",
-    "time": 30,
-    "difficulty": "Легко",
-    "vegetarian": true
+    "title": "Нейросети для повседневной работы",
+    "category": "Искусственный интеллект",
+    "instructor": "Ирина Белова",
+    "level": "Начальный",
+    "durationHours": 8,
+    "price": 1490,
+    "description": "Используйте генеративный ИИ для исследований, идей, текстов и автоматизации рутины.",
+    "image": "/img/neural-networks.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Основы UX/UI-дизайна",
+    "category": "Дизайн и digital",
+    "instructor": "София Андреева",
+    "level": "Начальный",
+    "durationHours": 14,
+    "price": 2290,
+    "description": "Исследуйте потребности пользователей и спроектируйте понятный интерфейс продукта.",
+    "image": "/img/ux-design.jpg"
+  },
+  {
+    "id": 9,
+    "title": "ВВВВ",
+    "description": "аааа",
+    "instructor": "ввввв",
+    "category": "Анализ данных",
+    "level": "Продвинутый",
+    "durationHours": 2,
+    "price": 1000,
+    "image": "/img/web-development.jpg"
   }
 ]

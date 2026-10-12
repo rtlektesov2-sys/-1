@@ -1,0 +1,19 @@
+<article class="course-card">
+  <a class="course-card__image-wrap" href="/film/<%= course.id %>" aria-label="Подробнее о курсе «<%= course.title %>»">
+    <img class="course-card__image" src="<%= course.image || '/img/web-development.jpg' %>" alt="Иллюстрация курса «<%= course.title %>»" loading="lazy">
+    <span class="course-card__category"><%= course.category %></span>
+  </a>
+  <div class="course-card__body">
+    <h3 class="course-card__title"><a href="/film/<%= course.id %>"><%= course.title %></a></h3>
+    <p class="course-card__description"><%= course.description %></p>
+    <p class="course-card__instructor">Преподаватель: <%= course.instructor %></p>
+    <div class="course-card__facts">
+      <span><%= course.level %></span>
+      <span><%= course.durationHours %> ч обучения</span>
+    </div>
+    <div class="course-card__footer">
+      <span class="course-card__price"><%= course.price === 0 ? 'Бесплатно' : new Intl.NumberFormat('ru-KZ', { style: 'currency', currency: 'KZT', maximumFractionDigits: 0 }).format(course.price) %></span>
+      <a class="button button--green" href="/film/<%= course.id %>">Подробнее <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</article>

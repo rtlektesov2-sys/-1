@@ -1,0 +1,97 @@
+<%- include('partials/head', { title: title, description: 'Практические онлайн-курсы по ИИ, программированию, аналитике и дизайну.' }) %>
+<%- include('partials/header', { activePage: 'catalog' }) %>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__content">
+      <p class="eyebrow"><span class="eyebrow__line"></span> ЗНАНИЯ ДЛЯ СЛЕДУЮЩЕГО ШАГА</p>
+      <h1 id="hero-title">Учитесь тому,<br>что меняет <em>будущее.</em></h1>
+      <p class="hero__copy">Практические курсы от специалистов индустрии. От первых строк кода до мира искусственного интеллекта.</p>
+      <div class="hero__actions">
+        <a class="button button--light" href="#catalog">Выбрать направление <span aria-hidden="true">↓</span></a>
+        <a class="button button--hero-outline" href="/feedback">Обратная связь <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <p class="hero__note"><span>01 / 04</span> Новые навыки начинаются здесь</p>
+  </section>
+
+  <section class="facts" id="about" aria-label="О платформе">
+    <div class="fact"><strong><%= String(totalCourses).padStart(2, '0') %></strong><span>курсов в каталоге</span></div>
+    <div class="fact"><strong><%= categories.length.toString().padStart(2, '0') %></strong><span>направления обучения</span></div>
+    <div class="fact"><strong>Ваш</strong><span>темп и расписание</span></div>
+    <p class="facts__note">Учитесь онлайн.<br>Применяйте знания сразу.</p>
+  </section>
+
+  <section class="catalog section-wrap" id="catalog" aria-labelledby="catalog-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span> КАТАЛОГ ПРОГРАММ</p>
+        <h2 id="catalog-title">Найдите своё направление</h2>
+      </div>
+      <p class="section-heading__aside">Выбирайте курс, который поможет<br>двигаться к вашим целям.</p>
+    </div>
+
+    <div class="catalog-tools">
+      <nav class="filters" aria-label="Фильтр по направлению">
+        <a class="filter-button <%= !categoryFilter ? 'is-active' : '' %>" href="/?q=<%= encodeURIComponent(query || '') %>">Все курсы</a>
+        <% categories.forEach(function (category) { %>
+          <a class="filter-button <%= categoryFilter === category ? 'is-active' : '' %>" href="/?category=<%= encodeURIComponent(category) %>&q=<%= encodeURIComponent(query || '') %>"><%= category %></a>
+        <% }); %>
+      </nav>
+      <form class="search-box" action="/" method="get">
+        <% if (categoryFilter) { %><input type="hidden" name="category" value="<%= categoryFilter %>"><% } %>
+        <span class="search-box__icon" aria-hidden="true">⌕</span>
+        <label class="visually-hidden" for="course-search">Поиск по курсам</label>
+        <input id="course-search" name="q" type="search" value="<%= query || '' %>" placeholder="Поиск по курсам" autocomplete="off">
+      </form>
+    </div>
+
+    <div class="results-line">
+      <p>Курсы: <%= courses.length %></p>
+      <span>FORMA · Академия навыков</span>
+    </div>
+
+    <% if (courses.length === 0) { %>
+      <p class="message empty-state">Записей пока нет. Попробуйте изменить поиск или выбрать другое направление.</p>
+    <% } else { %>
+      <div class="course-grid">
+        <% courses.forEach(function (course) { %>
+          <%- include('partials/card', { course: course }) %>
+        <% }); %>
+      </div>
+    <% } %>
+  </section>
+
+  <section class="teacher-section" id="for-teachers">
+    <div class="teacher-section__intro">
+      <p class="eyebrow eyebrow--dark"><span class="eyebrow__line"></span> ДЛЯ ПРЕПОДАВАТЕЛЕЙ</p>
+      <h2>Поделитесь тем,<br>что знаете.</h2>
+      <p>Добавьте программу в каталог и помогите другим освоить новое направление.</p>
+    </div>
+    <details class="course-editor">
+      <summary>Добавить курс <span aria-hidden="true">+</span></summary>
+      <form id="course-form" class="course-form">
+        <label>Название курса<input name="title" required maxlength="100" placeholder="Например, Основы Python"></label>
+        <label>Преподаватель<input name="instructor" required maxlength="80" placeholder="Имя и фамилия"></label>
+        <label>Направление
+          <select name="category" required>
+            <% categories.forEach(function (category) { %><option value="<%= category %>"><%= category %></option><% }); %>
+          </select>
+        </label>
+        <label>Уровень
+          <select name="level" required>
+            <option value="Начальный">Начальный</option>
+            <option value="Средний">Средний</option>
+            <option value="Продвинутый">Продвинутый</option>
+          </select>
+        </label>
+        <label>Длительность, часов<input name="durationHours" type="number" min="1" max="500" required placeholder="12"></label>
+        <label>Стоимость, ₸<input name="price" type="number" min="0" step="1" required value="0"></label>
+        <label class="course-form__wide">О курсе<textarea name="description" required maxlength="350" rows="3" placeholder="Чему научится студент"></textarea></label>
+        <button class="button button--green" type="submit">Опубликовать курс <span aria-hidden="true">↗</span></button>
+        <p id="course-form-message" class="form-message" role="status" hidden></p>
+      </form>
+    </details>
+  </section>
+</main>
+<%- include('partials/footer', { year: year }) %>
+<script src="/js/app.js"></script>
